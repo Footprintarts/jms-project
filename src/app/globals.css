@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700&family=Poppins:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,6 +7,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-body: "Poppins", sans-serif;
+  --font-default: "Plus Jakarta Sans", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,4 +22,151 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .heading {
+    @apply font-extrabold  text-center text-5xl mb-4 text-zinc-800 tracking-tight;
+  }
+
+  .btn-hover {
+    @apply hover:bg-transparent hover:text-blue-900 hover:border-2 transition-all duration-300;
+  }
+
+  .sm-shadow {
+    @apply shadow-md shadow-zinc-200/70;
+  }
+
+  .active {
+    @apply text-primaryColor text-[16px] leading-7 font-semibold;
+  }
+  .inactive {
+    @apply text-textColor text-[16px] leading-7 font-medium hover:text-primaryColor transition-colors;
+  }
+
+  .bg-grad {
+    @apply bg-gradient-to-br from-white via-white to-blue-200;
+  }
+}
+
+@layer base {
+  section {
+    @apply py-[75px];
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-full w-[1440px] px-5 mx-auto;
+  }
+
+  .btn {
+    @apply bg-primaryColor py-[15px] px-[35px] rounded-[50px] text-white font-[600] mt-[38px];
+  }
+
+  .btn-hover {
+    @apply hover:bg-blue-200 hover:border hover:border-primaryColor transition-all duration-300 hover:text-primaryColor hover:shadow-xl  hover:shadow-primaryColor/20 hover:-translate-y-1;
+  }
+
+  .heading {
+    @apply text-[44px] leading-[54px] font-[700] text-headingColor;
+  }
+
+  .heading-1 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-headingColor;
+  }
+
+  .text_para {
+    @apply text-[18px] leading-[30px] font-[400] text-textColor mt-[18px];
+  }
+
+  .centered-row {
+    @apply flex items-center;
+  }
+
+  .header {
+    @apply bg-gradient-to-r from-blue-200 via-white to-red-100 backdrop-blur bg-no-repeat bg-cover bg-center w-full py-5 px-4;
+  }
+
+  .sticky_header {
+    @apply w-full h-[80px] sticky top-0 left-0 z-[999] bg-gradient-to-r from-blue-200/70 via-white/90 to-red-100/70  backdrop-blur shadow;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .container {
+    @apply w-full;
+  }
+
+  section {
+    @apply py-[35px];
+  }
+
+  /* .navigation {
+    @apply w-full h-full fixed top-0 left-0 z-[100] bg-[#00000084];
+  } */
+
+  .menu {
+    @apply hidden w-[15rem] h-full absolute top-0 right-0 bg-white z-[200] flex-col justify-center items-center leading-8;
+  }
+
+  .show_menu {
+    @apply block;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .heading {
+    @apply text-[26px] leading-[36px];
+  }
+
+  .text_para {
+    @apply text-[16px] leading-7 my-3;
+  }
+}
+
+/* Slider-CSS */
+.testimonial-slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.slides {
+  display: flex;
+  gap: 16px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 20%;
+  flex-shrink: 0;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+button {
+  padding: 8px 12px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+.testimonial-slider .slide {
+  transition: all 0.3s ease;
+}
+
+.testimonial-slider .slide.bg-blue-100 {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
