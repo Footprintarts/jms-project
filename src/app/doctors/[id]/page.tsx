@@ -13,12 +13,18 @@ import SidePanel from "../../../components/SidePanel";
 import { doctors } from "../../../assets/data/doctors";
 import DocNotFound from "../../../components/DocNotFound";
 
-export default function Page({ params }: { params: { id: string } }) {
+interface PageProps {
+  params: {
+    id: string;
+  };
+}
+
+export default function Page({ params }: PageProps) {
   const [tab, setTab] = useState("about");
-  const id = params.id; // Directly use params.id without async
+  const id = params.id; // This will be a string
   const doctor = doctors.find((doc) => doc.id === id);
 
-  // FallBack Case
+  // Fallback Case
   if (!doctor) {
     return <DocNotFound />;
   }
