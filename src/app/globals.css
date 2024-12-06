@@ -91,6 +91,14 @@ body {
   .sticky_header {
     @apply w-full h-[80px] sticky top-0 left-0 z-[999] bg-gradient-to-r from-blue-200/70 via-white/90 to-red-100/70  backdrop-blur shadow;
   }
+
+  .form_label {
+    @apply text-textColor font-semibold text-base mb-2;
+  }
+
+  .form_input {
+    @apply w-full px-4 border border-solid border-[#0066ff61] focus:outline-none focus:border-primaryColor text-base text-headingColor placeholder:text-textColor cursor-pointer;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -123,6 +131,18 @@ body {
   .text_para {
     @apply text-[16px] leading-7 my-3;
   }
+}
+/* Transition */
+.translate-x-0 {
+  transform: translateX(0);
+}
+
+.-translate-x-full {
+  transform: translateX(-100%);
+}
+
+.transition-transform {
+  transition: transform 0.3s ease-in-out;
 }
 
 /* Slider-CSS */

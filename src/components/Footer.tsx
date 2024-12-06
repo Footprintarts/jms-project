@@ -1,6 +1,7 @@
 import Image from "next/image";
 import logo from "../assets/images/logo-jms.png";
 import FooterLinks from "./FooterLinks";
+import Link from "next/link";
 
 const links = [
   {
@@ -28,7 +29,9 @@ const Footer = () => {
       <div className="container">
         <div className="flex justify-between flex-col md:flex-row flex-wrap gap-[30px] p-4">
           <div className="logo p-4">
-            <Image src={logo} alt="image" width={150} />
+            <Link href="/">
+              <Image src={logo} alt="image" width={150} />
+            </Link>
             <p className="text-zinc-400/80 text-base mt-2">
               Copyright © {year} Footprint Arts.{" "}
             </p>

@@ -5,7 +5,7 @@ const ServicesCard = ({ item, index }) => {
   const { name, desc, bgColor, textColor } = item;
 
   return (
-    <div className="py-[30px] px-3 lg:px-5">
+    <div className="py-[30px] px-3 lg:px-5 hover:bg-blue-50 transition">
       <h2 className="text-[26px] leading-9 text-headingColor font-bold">
         {name}
       </h2>
